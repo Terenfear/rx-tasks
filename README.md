@@ -17,7 +17,7 @@
 
 For example the Firebase sign in API asynchronously returns an `AuthResult` which can be consumed via `toSingle` method as an extension of `Task<T>`.
 
-If consuming from Java code, the class `RxTasks.toSingle<T>(task)` can be used, this is marked as the direct extensions `SingleTaskKt.toSingle<T>(Task<T>)` and `CompletableTaskKt.toCompletable(Task<*>)` should be preferred.
+If consuming from Java code, use `SingleTaskKt.toSingle<T>(Task<T>)` and `CompletableTaskKt.toCompletable(Task<*>)`.
 
 It is currently only possible to create a `Completable` from a `Task<Void>`, as this honours the correct API behaviour and it is not the responsibility of this library to convert between reactive types.
 
