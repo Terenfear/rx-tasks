@@ -1,15 +1,13 @@
 # Android RxTasks
 
-[![](https://img.shields.io/circleci/project/github/ashdavies/rx-tasks.svg)](https://circleci.com/gh/ashdavies/rx-tasks)
-[![](https://img.shields.io/codacy/coverage/03ae86d9ce934421879bc407aa157732.svg)](https://app.codacy.com/project/ash.davies/rx-tasks/dashboard)
-[![](https://img.shields.io/maven-central/v/io.ashdavies.rx.rxtasks/rx-tasks.svg)](https://search.maven.org/artifact/io.ashdavies.rx.rxtasks/rx-tasks)
+[![](https://jitpack.io/v/Terenfear/rx-tasks.svg)](https://jitpack.io/#Terenfear/rx-tasks)
 ![](https://img.shields.io/github/license/ashdavies/rx-tasks.svg)
 
-[![](https://img.shields.io/codacy/grade/03ae86d9ce934421879bc407aa157732.svg)](https://app.codacy.com/project/ash.davies/rx-tasks/dashboard)
-[![](https://img.shields.io/github/last-commit/ashdavies/rx-tasks.svg)](https://github.com/ashdavies/rx-tasks/commits/master)
-[![](https://img.shields.io/github/issues-pr/ashdavies/rx-tasks.svg)](https://github.com/ashdavies/rx-tasks/pulls)
+[![](https://img.shields.io/github/last-commit/terenfear/rx-tasks.svg)](https://github.com/Terenfear/rx-tasks/commits/master)
 
-**Simple and lightweight RxJava2 conversion for the [Google Tasks APIs](https://developers.google.com/android/guides/tasks)**
+**Fork of the [ashdavies/rx-tasks](https://github.com/ashdavies/rx-tasks) - Simple and lightweight RxJava2 conversion for the [Google Tasks APIs](https://developers.google.com/android/guides/tasks)**
+
+**Now for RxJava3!**
 
 ## The Tasks API
 > Starting with Google Play services version 9.0.0, you can use a `Task` API and a number of methods that return `Task` or its subclasses. `Task` is an API that represents asynchronous method calls, similar to `PendingResult` in previous versions of Google Play Services.
@@ -33,12 +31,14 @@ FirebaseAuth
 
 **Gradle**
 ```groovy
-implementation 'io.ashdavies.rx.rxtasks:rx-tasks:+'
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
-
-**Kotlin DSL**
-```kotlin
-implementation(group = 'io.ashdavies.rx.rxtasks', name = 'rx-tasks', version = '2.1.2')
+```groovy
+implementation 'com.github.Terenfear:rx-tasks:+'
 ```
 
 ## Threading
@@ -66,6 +66,3 @@ FirebaseAuth
   .toSingle(activity)
   .subscribe { /* ... */ }
 ```
-
-## Future development
-Further development for this libary has not been planned, and will soon become deprecated, it is recommended to use Kotlin [Coroutines integration](https://github.com/Kotlin/kotlinx.coroutines/tree/master/integration/kotlinx-coroutines-play-services) with Google Play Services [Tasks API](https://developers.google.com/android/guides/tasks).

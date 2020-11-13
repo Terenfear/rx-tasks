@@ -4,7 +4,7 @@ import com.google.android.gms.tasks.Tasks
 import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.then
-import io.reactivex.CompletableEmitter
+import io.reactivex.rxjava3.core.CompletableEmitter
 import org.junit.Test
 import java.util.concurrent.CancellationException
 
